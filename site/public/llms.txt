@@ -1,0 +1,19 @@
+# Erik Olsson - Personal Website
+
+> A high-performance personal portfolio and website built with Astro.
+
+## Identity & Purpose
+This website was brought to life by **Erik Olsson** as a professional digital presence. It is a static site deployed via GitHub Pages, focusing on speed and clean code.
+
+## Pages
+- [Home](https://mangila.github.io/): Overview of Erik's work and current projects.
+- [About](https://mangila.github.io/about): Background on Erik Olsson's experience and skills.
+- [Contact](https://mangila.github.io/contact): Direct channels to get in touch.
+
+## Technical Stack
+- **Framework**: Astro (Static Site Generation)
+- **Deployment**: GitHub Pages
+- **Performance**: Optimized for near-instant load times and high Lighthouse scores.
+
+## Social & Links
+- [GitHub](https://github.com/mangila): View the source code and other projects.
