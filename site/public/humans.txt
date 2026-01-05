@@ -1,0 +1,12 @@
+/* TEAM */
+    This website was brought to life by Erik Olsson
+    GitHub: https://github.com/mangila
+
+/* THANKS */
+	My mother and my girlfriend
+
+/* SITE */
+	Language: English
+	Doctype: HTML5
+	IDE: vscode
+    Framework: Astro
