@@ -10,6 +10,7 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://mangila.github.io",
+  output: "static",    
   integrations: [react(), icon()],
 
   vite: {

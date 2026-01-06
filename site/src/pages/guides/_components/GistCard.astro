@@ -1,0 +1,22 @@
+---
+import { Icon } from "astro-icon/components";
+import type { GithubGistResponse } from "../../../shared/github";
+
+interface Props {
+  gist: GithubGistResponse;
+}
+
+const { gist } = Astro.props;
+---
+
+<a href=`/gists/${gist.id}` class="link-hover p-2 m-2">
+  <div class=`h-full border p-4 rounded-md`>
+    <h3 class="font-bold">{gist.description}</h3>
+
+    <div class="mt-auto flex items-center gap-1">
+      <Icon name="ion:document-outline" class="w-6 h-6" />
+      <span class="text-sm font-medium">{Object.keys(gist.files).length}</span>
+      <span class="text-sm font-medium">Files</span>
+    </div>
+  </div>
+</a>

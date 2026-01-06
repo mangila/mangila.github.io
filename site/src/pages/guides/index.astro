@@ -1,0 +1,14 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getGitHubGistsAsync } from "../../shared/github";
+import { GITHUB_USERNAME } from "../../shared/utils";
+import GistCard from "./_components/GistCard.astro";
+
+const gists = await getGitHubGistsAsync(GITHUB_USERNAME);
+---
+
+<Layout>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+    {gists.map((gist) => <GistCard gist={gist} />)}
+  </div>
+</Layout>

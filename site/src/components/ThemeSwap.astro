@@ -1,0 +1,17 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<label class="swap swap-rotate">
+  <input
+    type="checkbox"
+    value="dark"
+    class="toggle hidden"
+    data-toggle-theme="dark,light"
+    data-act-class="ACTIVECLASS"
+  />
+
+  <Icon name="ion:sunny-outline" class="swap-off h-10 w-10 fill-current" />
+  <Icon name="ion:moon-outline" class="swap-on h-10 w-10 fill-current" />
+  <span class="sr-only">Toogle light and dark theme</span>
+</label>
