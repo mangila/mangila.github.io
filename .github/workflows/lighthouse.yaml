@@ -1,4 +1,4 @@
-name: CI
+name: Lighthouse CI
 on:
   push:
     branches: [ dev ]
@@ -16,4 +16,4 @@ jobs:
           node-version: 24
       - run: npm install && npm install -g @lhci/cli@0.15.x
       - run: npm run build
-      - run: lhci autorun --no-lighthouserc --upload.target=temporary-public-storage
+      - run: lhci autorun --upload.target=temporary-public-storage
