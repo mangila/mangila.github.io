@@ -1,5 +1,6 @@
 ---
-import "normalize.css/normalize.css";
+import normalize from "normalize.css/normalize.css?raw";
+import "../styles/global.css";
 ---
 
 <!doctype html>
@@ -7,6 +8,7 @@ import "normalize.css/normalize.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <style is:inline set:html={normalize}></style>
     <link type="text/plain" rel="author" href="/humans.txt" />
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
