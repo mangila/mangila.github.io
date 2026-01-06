@@ -1,10 +1,4 @@
 name: Lighthouse CI
-
-permissions:
-  contents: read
-  statuses: write
-env:
-  LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 on:
   push:
     branches: [ dev ]
@@ -17,9 +11,13 @@ jobs:
     continue-on-error: true
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: 24
       - run: npm install && npm install -g @lhci/cli@0.15.x
       - run: npm run build
       - run: lhci autorun  
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
