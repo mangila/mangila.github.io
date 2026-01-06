@@ -1,3 +1,7 @@
+---
+import "normalize.css/normalize.css";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,10 +17,18 @@
       href="icons/apple-touch-icon.png"
     />
     <link rel="manifest" href="site.webmanifest" />
-    <meta name="generator" content={Astro.generator} />
-    <meta property="og:title" content="Your Page Title" />
-    <meta property="og:image" content="https://example.com/image.jpg" />
+    <meta
+      name="description"
+      content="This website was brought to life by **Erik Olsson** as a professional digital presence. It is a static site deployed via GitHub Pages, focusing on speed and clean code."
+    />
+    <meta property="og:title" content="mangila" />
+    <meta
+      property="og:image"
+      content="https://mangila.github.io/icons/web-app-manifest-512x512.png"
+    />
+    <meta property="og:url" content="https://mangila.github.io" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="generator" content={Astro.generator} />
     <title>mangila</title>
   </head>
   <body>
