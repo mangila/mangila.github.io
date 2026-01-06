@@ -1,0 +1,29 @@
+---
+import type { GithubRepositoryResponse } from "../../../shared/github.ts";
+
+import { getLanguageBadgeBgColor } from "../../../shared/utils.ts";
+
+interface Props {
+  repository: GithubRepositoryResponse;
+}
+const { repository } = Astro.props;
+
+const languageBadgeBgColor = getLanguageBadgeBgColor(repository.language);
+---
+
+<a href={repository.html_url} class="link-hover p-2 m-2">
+  <div class=`h-full border p-4 rounded-md`>
+    <span class="flex gap-1">
+      <h3 class="font-bold">{repository.name}</h3>
+    </span>
+
+    <p class="mt-1">{repository.description}</p>
+
+    <div class="mt-auto flex items-center gap-2">
+      <span>⭐ {repository.stargazers_count}</span>
+      <span class=`w-3 h-3 rounded-full ${languageBadgeBgColor}`></span>
+      <span>{repository.language}</span>
+      {repository.archived && <div class="badge badge-warning">Archived</div>}
+    </div>
+  </div>
+</a>

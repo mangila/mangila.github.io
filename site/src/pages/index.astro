@@ -1,11 +1,35 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import erikolsson from "../assets/erikolsson.jpeg";
+import { GITHUB_USERNAME } from "../shared/utils";
+import {
+  getGitHubReadmeAsync,
+  convertMarkdownToHtmlAsync,
+} from "../shared/github.ts";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const readme = await getGitHubReadmeAsync(GITHUB_USERNAME, GITHUB_USERNAME);
+const markdownHtml = await convertMarkdownToHtmlAsync(readme.content);
 ---
 
 <Layout>
-	<Welcome />
+  <div class="flex justify-center">
+    <div class="hero min-h-screen">
+      <div class="hero-content flex-col lg:flex-row-reverse">
+        <figure>
+          <Image
+            src={erikolsson}
+            alt="Erik Olsson"
+            loading="eager"
+            format="webp"
+            quality="mid"
+            class="max-w-sm rounded-lg shadow-2xl"
+          />
+        </figure>
+        <div class="prose prose-md">
+          <Fragment set:html={markdownHtml} />
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>
