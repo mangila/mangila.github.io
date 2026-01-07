@@ -9,7 +9,7 @@ interface Props {
 const { gist } = Astro.props;
 ---
 
-<a href=`/gists/${gist.id}` class="link-hover p-2 m-2">
+<a href={gist.html_url} class="link-hover p-2 m-2">
   <div class=`h-full border p-4 rounded-md`>
     <h3 class="font-bold">{gist.description}</h3>
 
