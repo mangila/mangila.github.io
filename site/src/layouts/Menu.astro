@@ -1,0 +1,17 @@
+---
+const { pathname } = Astro.url;
+---
+
+<div class="flex row justify-center gap-4 mt-4 prose-xl">
+  <a class="link link-hover" href="/">
+    <span class={`${pathname === "/" ? "underline" : ""}`}>Home</span>
+  </a>
+  <a class="link link-hover" href="/projects">
+    <span class={`${pathname === "/projects" ? "underline" : ""}`}
+      >Projects</span
+    >
+  </a>
+  <a class="link link-hover" href="/guides">
+    <span class={`${pathname === "/guides" ? "underline" : ""}`}>Guides</span>
+  </a>
+</div>
