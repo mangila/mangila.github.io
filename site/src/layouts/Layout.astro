@@ -49,27 +49,29 @@ const { pathname } = Astro.url;
     <meta name="generator" content={Astro.generator} />
     <title>mangila</title>
   </head>
-  <body class="bg-grey-50 flex flex-col min-h-dvh">
-    <Navbar />
-    <main class="flex-grow">
-      <div class="flex row justify-center gap-4 mt-4 prose-xl">
-        <a class="link link-hover" href="/">
-          <span class={`${pathname === "/" ? "underline" : ""}`}>Home</span>
-        </a>
-        <a class="link link-hover" href="/projects">
-          <span class={`${pathname === "/projects" ? "underline" : ""}`}
-            >Projects</span
-          >
-        </a>
-        <a class="link link-hover" href="/guides">
-          <span class={`${pathname === "/guides" ? "underline" : ""}`}
-            >Guides</span
-          >
-        </a>
-      </div>
-      <slot />
-    </main>
-    <Footer />
+  <body class="bg-grey-50">
+    <div class="flex flex-col min-h-dvh">
+      <Navbar />
+      <main class="flex-grow">
+        <div class="flex row justify-center gap-4 mt-4 prose-xl">
+          <a class="link link-hover" href="/">
+            <span class={`${pathname === "/" ? "underline" : ""}`}>Home</span>
+          </a>
+          <a class="link link-hover" href="/projects">
+            <span class={`${pathname === "/projects" ? "underline" : ""}`}
+              >Projects</span
+            >
+          </a>
+          <a class="link link-hover" href="/guides">
+            <span class={`${pathname === "/guides" ? "underline" : ""}`}
+              >Guides</span
+            >
+          </a>
+        </div>
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>
 
