@@ -1,0 +1,11 @@
+---
+import { EMAIL } from "../shared/utils.ts";
+
+const { text } = Astro.props;
+---
+
+<a href={`mailto:${EMAIL}`} class="link">
+  <p class="text-center bg-base-200 text-center">
+    {text}
+  </p>
+</a>
