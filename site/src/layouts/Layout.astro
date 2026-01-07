@@ -2,8 +2,7 @@
 import normalize from "normalize.css/normalize.css?raw";
 import Navbar from "./Navbar.astro";
 import Footer from "./Footer.astro";
-
-const { pathname } = Astro.url;
+import Menu from "./Menu.astro";
 ---
 
 <!doctype html>
@@ -52,22 +51,8 @@ const { pathname } = Astro.url;
   <body class="bg-grey-50">
     <div class="flex flex-col min-h-dvh">
       <Navbar />
+      <Menu />
       <main class="flex-grow">
-        <div class="flex row justify-center gap-4 mt-4 prose-xl">
-          <a class="link link-hover" href="/">
-            <span class={`${pathname === "/" ? "underline" : ""}`}>Home</span>
-          </a>
-          <a class="link link-hover" href="/projects">
-            <span class={`${pathname === "/projects" ? "underline" : ""}`}
-              >Projects</span
-            >
-          </a>
-          <a class="link link-hover" href="/guides">
-            <span class={`${pathname === "/guides" ? "underline" : ""}`}
-              >Guides</span
-            >
-          </a>
-        </div>
         <slot />
       </main>
       <Footer />
