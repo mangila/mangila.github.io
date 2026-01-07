@@ -51,7 +51,7 @@ import Menu from "./Menu.astro";
     <meta name="generator" content={Astro.generator} />
     <title>mangila</title>
   </head>
-  <body class="bg-grey-50">
+  <body class="bg-base-200">
     <div class="flex flex-col min-h-dvh">
       <div class="flex-none pt-safe">
         <Navbar />
@@ -71,7 +71,7 @@ import Menu from "./Menu.astro";
 
 <style>
   @import "tailwindcss";
-  @plugin "@tailwindcss/typography";
   @import "tailwindcss-safe-area";
+  @plugin "@tailwindcss/typography";
   @plugin "daisyui";
 </style>
