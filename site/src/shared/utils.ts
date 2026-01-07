@@ -1,6 +1,8 @@
 export const GITHUB_USERNAME =
   import.meta.env.PUBLIC_GITHUB_USERNAME || "mangila";
-export const NAME =  import.meta.env.PUBLIC_NAME || "Erik Olsson";
+export const NAME = import.meta.env.PUBLIC_NAME || "Erik Olsson";
+export const EMAIL =
+  import.meta.env.PUBLIC_EMAIL || "olsson.erik1993@gmail.com";
 
 export function getLanguageBadgeBgColor(language: string | null) {
   switch (language) {

@@ -1,4 +1,5 @@
 ---
+import MailtoLink from "../../components/MailtoLink.astro";
 import CardLayout from "../../layouts/CardLayout.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getGitHubGistsAsync } from "../../shared/github";
@@ -9,6 +10,7 @@ const gists = await getGitHubGistsAsync(GITHUB_USERNAME);
 ---
 
 <Layout>
+  <MailtoLink text="For my closed source projects, please send me an email" />
   <CardLayout>
     {gists.map((gist) => <GistCard gist={gist} />)}
   </CardLayout>

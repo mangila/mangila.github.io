@@ -1,6 +1,7 @@
 ---
 import CardLayout from "../../layouts/CardLayout.astro";
 import Layout from "../../layouts/Layout.astro";
+import MailtoLink from "../../components/MailtoLink.astro";
 import { getGitHubRepositoriesAsync } from "../../shared/github.ts";
 import { GITHUB_USERNAME } from "../../shared/utils.ts";
 import RepositoryCard from "./_components/RepositoryCard.astro";
@@ -9,9 +10,7 @@ const repositories = await getGitHubRepositoriesAsync(GITHUB_USERNAME);
 ---
 
 <Layout>
-  <p class="text-center bg-base-200 underline text-center">
-    For my closed source projects, please ask
-  </p>
+  <MailtoLink text="For my closed source projects, please send me an email" />
   <CardLayout>
     {repositories.map((repo) => <RepositoryCard repository={repo} />)}
   </CardLayout>
