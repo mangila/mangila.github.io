@@ -1,4 +1,5 @@
 ---
+import CardLayout from "../../layouts/CardLayout.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getGitHubRepositoriesAsync } from "../../shared/github.ts";
 import { GITHUB_USERNAME } from "../../shared/utils.ts";
@@ -11,7 +12,7 @@ const repositories = await getGitHubRepositoriesAsync(GITHUB_USERNAME);
   <p class="text-center bg-base-200 underline text-center">
     For my closed source projects, please ask
   </p>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+  <CardLayout>
     {repositories.map((repo) => <RepositoryCard repository={repo} />)}
-  </div>
+  </CardLayout>
 </Layout>
