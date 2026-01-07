@@ -22,7 +22,10 @@ import Menu from "./Menu.astro";
         );
     </script>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <style is:inline set:html={normalize}></style>
     <link type="text/plain" rel="author" href="/humans.txt" />
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -50,12 +53,18 @@ import Menu from "./Menu.astro";
   </head>
   <body class="bg-grey-50">
     <div class="flex flex-col min-h-dvh">
-      <Navbar />
-      <Menu />
+      <div class="flex-none pt-safe">
+        <Navbar />
+      </div>
+      <div class="flex-none">
+        <Menu />
+      </div>
       <main class="flex-grow">
         <slot />
       </main>
-      <Footer />
+      <div class="flex-none pb-safe">
+        <Footer />
+      </div>
     </div>
   </body>
 </html>
@@ -63,5 +72,6 @@ import Menu from "./Menu.astro";
 <style>
   @import "tailwindcss";
   @plugin "@tailwindcss/typography";
+  @import "tailwindcss-safe-area";
   @plugin "daisyui";
 </style>
