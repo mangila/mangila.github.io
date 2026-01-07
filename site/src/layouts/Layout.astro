@@ -3,7 +3,7 @@ import normalize from "normalize.css/normalize.css?raw";
 import Navbar from "./Navbar.astro";
 import Footer from "./Footer.astro";
 
-const pathname = Astro.url.pathname;
+const { pathname } = Astro.url;
 ---
 
 <!doctype html>
