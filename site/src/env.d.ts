@@ -4,6 +4,7 @@
 interface ImportMetaEnv {
   readonly GITHUB_USER_TOKEN: string;
   readonly PUBLIC_GITHUB_USERNAME: string;
+  readonly PUBLIC_NAME: string;
 }
 
 interface ImportMeta {

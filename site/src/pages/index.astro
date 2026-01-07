@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import erikolsson from "../assets/erikolsson.jpeg";
-import { GITHUB_USERNAME } from "../shared/utils";
+import heroImage from "../assets/hero.jpeg";
+import { GITHUB_USERNAME, NAME } from "../shared/utils";
 import {
   getGitHubReadmeAsync,
   convertMarkdownToHtmlAsync,
@@ -18,8 +18,8 @@ const markdownHtml = await convertMarkdownToHtmlAsync(readme.content);
       <div class="hero-content flex-col lg:flex-row-reverse">
         <figure>
           <Image
-            src={erikolsson}
-            alt="Erik Olsson"
+            src={heroImage}
+            alt={NAME}
             loading="eager"
             format="webp"
             quality="mid"
