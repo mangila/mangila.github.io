@@ -3,7 +3,7 @@ import { setInCache, getFromCache } from "./cache";
 
 import type { GetResponseDataTypeFromEndpointMethod } from "@octokit/types";
 
-export const octokit = new Octokit({
+const octokit = new Octokit({
   auth: import.meta.env.GITHUB_USER_TOKEN,
   retry: { enabled: false },
   throttle: { enabled: false },
