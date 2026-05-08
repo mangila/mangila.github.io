@@ -6,7 +6,7 @@ import { GITHUB_USERNAME, NAME } from "../shared/utils";
 import {
   getGitHubReadmeAsync,
   convertMarkdownToHtmlAsync,
-} from "../shared/github.ts";
+} from "../shared/github";
 
 const readme = await getGitHubReadmeAsync(GITHUB_USERNAME, GITHUB_USERNAME);
 const markdownHtml = await convertMarkdownToHtmlAsync(readme.content);
