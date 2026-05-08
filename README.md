@@ -1,3 +1,5 @@
+![Astro](https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white)
+
 # mangila.github.io
 
 mangila.github.io
@@ -7,7 +9,7 @@ mangila.github.io
 You can use this site as a template by adding a `.env` file in the root of `/site` with the values:
 
 - PUBLIC_GITHUB_USERNAME - your github username
-- GITHUB_USER_TOKEN - create a Github user token with your prefered scope - you could roll without one to, since we are not doing alot of request with Ocktokit to hit the ratelimit.
+- GITHUB_USER_TOKEN - create a Github user token with your prefered scope - you could roll without one to, since we are not doing alot of request with Ocktokit to hit the ratelimit. But nice to have during development
 - PUBLIC_NAME - your name
 - PUBLIC_EMAIL - your email for call to actions
 
