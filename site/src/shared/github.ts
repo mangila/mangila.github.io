@@ -15,7 +15,7 @@ export type GetReadmeResponse = GetResponseDataTypeFromEndpointMethod<
 
 export async function getGitHubReadmeAsync(
   owner: string,
-  repo: string
+  repo: string,
 ): Promise<GetReadmeResponse> {
   const cacheKey = `github-readme-${owner}-${repo}`;
   const cached = getFromCache<GetReadmeResponse>(cacheKey);
@@ -31,7 +31,7 @@ export async function getGitHubReadmeAsync(
 
 async function fetchGitHubReadmeAsync(
   owner: string,
-  repo: string
+  repo: string,
 ): Promise<GetReadmeResponse> {
   const response = await octokit.rest.repos.getReadme({
     owner,
@@ -41,7 +41,7 @@ async function fetchGitHubReadmeAsync(
 }
 
 export async function convertMarkdownToHtmlAsync(
-  contenBase64: string
+  contenBase64: string,
 ): Promise<string> {
   const cacheKey = `markdown-html-${contenBase64.substring(0, 10)}`;
   const cached = getFromCache<string>(cacheKey);
@@ -56,7 +56,7 @@ export async function convertMarkdownToHtmlAsync(
 }
 
 async function fetchConvertMarkdownToHtmlAsync(
-  contenBase64: string
+  contenBase64: string,
 ): Promise<string> {
   const markdown = Buffer.from(contenBase64, "base64").toString("utf-8");
   const response = await octokit.rest.markdown.render({
@@ -71,7 +71,7 @@ export type GithubRepositoriesResponse = GetResponseDataTypeFromEndpointMethod<
 >;
 
 export async function getGitHubRepositoriesAsync(
-  owner: string
+  owner: string,
 ): Promise<GithubRepositoriesResponse> {
   const cacheKey = `github-repos-${owner}`;
   const cached = getFromCache<GithubRepositoriesResponse>(cacheKey);
@@ -86,7 +86,7 @@ export async function getGitHubRepositoriesAsync(
 }
 
 async function fetchGitHubRepositoriesAsync(
-  owner: string
+  owner: string,
 ): Promise<GithubRepositoriesResponse> {
   const response = await octokit.rest.repos.listForUser({
     username: owner,
@@ -101,7 +101,7 @@ export type GithubRepositoryResponse = GetResponseDataTypeFromEndpointMethod<
 
 export async function getGitHubRepositoryAsync(
   owner: string,
-  repo: string
+  repo: string,
 ): Promise<GithubRepositoryResponse> {
   const cacheKey = `github-repos-${owner}-${repo}`;
   const cached = getFromCache<GithubRepositoryResponse>(cacheKey);
@@ -117,7 +117,7 @@ export async function getGitHubRepositoryAsync(
 
 async function fetchGitHubRepository(
   owner: string,
-  repo: string
+  repo: string,
 ): Promise<GithubRepositoryResponse> {
   const response = await octokit.rest.repos.get({
     owner: owner,
@@ -131,7 +131,7 @@ export type GithubUserResponse = GetResponseDataTypeFromEndpointMethod<
 >;
 
 export async function getGitHubUserAsync(
-  owner: string
+  owner: string,
 ): Promise<GithubUserResponse> {
   const cacheKey = `github-user-${owner}`;
   const cached = getFromCache<GithubUserResponse>(cacheKey);
@@ -146,7 +146,7 @@ export async function getGitHubUserAsync(
 }
 
 async function fetchGitHubUserAsync(
-  owner: string
+  owner: string,
 ): Promise<GithubUserResponse> {
   const response = await octokit.rest.users.getByUsername({
     username: owner,
@@ -163,7 +163,7 @@ export type GithubGistResponse = GetResponseDataTypeFromEndpointMethod<
 >;
 
 export async function getGitHubGistsAsync(
-  owner: string
+  owner: string,
 ): Promise<GithubGistsResponse> {
   const cacheKey = `github-gists-${owner}`;
   const cached = getFromCache<GithubGistsResponse>(cacheKey);
@@ -178,7 +178,7 @@ export async function getGitHubGistsAsync(
 }
 
 async function fetchGitHubGistsAsync(
-  owner: string
+  owner: string,
 ): Promise<GithubGistsResponse> {
   const response = await octokit.rest.gists.listForUser({
     username: owner,

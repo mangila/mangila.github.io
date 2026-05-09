@@ -1,18 +1,16 @@
 ![Astro](https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 # mangila.github.io
 
 mangila.github.io
 
-## Want to use this layout for your own github page?
+## Env
 
-You can use this site as a template by adding a `.env` file in the root of `/site` with the values:
+Root in `/site`
 
-- PUBLIC_GITHUB_USERNAME - your github username
-- GITHUB_USER_TOKEN - create a Github user token with your prefered scope - you could roll without one to, since we are not doing alot of request with Ocktokit to hit the ratelimit. But nice to have during development
-- PUBLIC_NAME - your name
-- PUBLIC_EMAIL - your email for call to actions
-
-But you would have to change the `<meta>` tags and webmanifest and the hero image in the `/assets` folder and the site url in `astro.config.mjs`
-
-- https://realfavicongenerator.net/ - or any generator for that
+- PUBLIC_GITHUB_USERNAME - Github Username used to fetch in OcktoKit
+- PUBLIC_NAME - Name to show in Display
+- PUBLIC_EMAIL - Email for call to actions
+- GITHUB_USER_TOKEN - (Optional)

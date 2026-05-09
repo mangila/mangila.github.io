@@ -10,11 +10,11 @@ const { gist } = Astro.props;
 ---
 
 <a href={gist.html_url} class="link link-hover m-2">
-  <div class="h-full border border-2 rounded-box p-2">
+  <div class="rounded-box h-full border border-2 p-2">
     <h3 class="font-bold">{gist.description}</h3>
 
     <div class="mt-auto flex items-center gap-1">
-      <Icon name="ion:document-outline" class="w-6 h-6" />
+      <Icon name="ion:document-outline" class="h-6 w-6" />
       <span class="text-sm font-medium">{Object.keys(gist.files).length}</span>
       <span class="text-sm font-medium">Files</span>
     </div>
