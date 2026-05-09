@@ -1,0 +1,18 @@
+# Build output
+dist/
+out/
+
+# Dependency folders
+node_modules/
+
+# Astro-specific cache
+.astro/
+
+# Git and IDE folders
+.git/
+.vscode/
+.github/
+.idea/
+
+# Lock files
+package-lock.json
