@@ -10,7 +10,7 @@ const repositories = await getGitHubRepositoriesAsync(GITHUB_USERNAME);
 ---
 
 <Layout>
-  <MailtoLink text="For my closed source projects, please send me an email" />
+  <MailtoLink text="Curious about my other work? Let's chat." />
   <CardLayout>
     {repositories.map((repo) => <RepositoryCard repository={repo} />)}
   </CardLayout>
