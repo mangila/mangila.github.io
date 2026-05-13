@@ -13,6 +13,11 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Cypress
+site/cypress/screenshots/
+site/cypress/videos/
+site/cypress/downloads/
+
 # environment variables
 .env
 .env.production
@@ -25,3 +30,9 @@ pnpm-debug.log*
 
 # vs code
 .vscode/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr

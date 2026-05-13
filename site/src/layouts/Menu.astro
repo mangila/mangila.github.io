@@ -2,7 +2,7 @@
 const { pathname } = Astro.url;
 ---
 
-<div class="row prose-xl mt-4 flex justify-center gap-4">
+<div id="navigation-menu" class="row prose-xl mt-4 flex justify-center gap-4">
   <a class="link link-hover" href="/">
     <span class={`${pathname === "/" ? "underline" : ""}`}>Home</span>
   </a>
