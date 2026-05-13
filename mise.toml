@@ -1,2 +1,18 @@
 [tools]
-node = "24.15.0"
+node = "24"
+python = "3"
+
+[env]
+_.python.venv = ".venv"
+
+[tasks."format:check"]
+dir = "./site"
+run = "npm run format:check"
+
+[tasks."format:write"]
+dir = "./site"
+run = "npm run format:write"
+
+[tasks."cypress:run"]
+dir = "./site"
+run = "npm run cypress:run"
