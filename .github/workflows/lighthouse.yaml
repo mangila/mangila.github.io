@@ -3,7 +3,7 @@ name: Lighthouse CI
 on:
   pull_request:
     paths:
-      - "site/src"
+      - "site/**"
     branches:
       - main
 
