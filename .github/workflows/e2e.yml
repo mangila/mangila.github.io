@@ -11,9 +11,6 @@ permissions:
 
 jobs:
   cypress-run:
-    defaults:
-      run:
-        working-directory: ./site
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,15 +25,13 @@ jobs:
         with:
           node-version: 24
 
-      - name: Install dependencies
-        run: npm ci
-
       - name: Cypress run
         # https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@dace029018fcdf86e0df89a31bc3cfa5b32570d8 # 7.3.0
         with:
           working-directory: ./site
           config: video=false
+          install-command: npm ci
           build: npm run build
           start: npm run preview
           wait-on: 'http://localhost:4321'
