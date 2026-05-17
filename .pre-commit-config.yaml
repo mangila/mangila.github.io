@@ -9,12 +9,18 @@ repos:
   - repo: local
     hooks:
       - id: prettier check
-        name: Maven Validate ensure4j
+        name: Prettier check
         entry: mise format:check
         language: system
         files: ^site/src
         require_serial: true
         pass_filenames: false
+
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.12
+    hooks:
+      - id: actionlint
+        name: Actionlint
 
   - repo: https://github.com/zizmorcore/zizmor-pre-commit
     rev: v1.25.2
