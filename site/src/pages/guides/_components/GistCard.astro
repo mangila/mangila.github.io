@@ -7,24 +7,27 @@ interface Props {
 }
 
 const { gist } = Astro.props;
+const htmlUrl = gist.html_url ?? "";
+const description = gist.description ?? "Untitled Gist";
+const files = Object.keys(gist.files ?? {});
 ---
 
 <a
-  href={gist.html_url}
+  href={htmlUrl}
   target="_blank"
   rel="noopener noreferrer"
   class="link link-hover m-2 block h-full"
 >
   <div class="rounded-box flex h-full flex-col justify-between border-2 p-2">
     <span class="block text-lg font-bold">
-      {gist.description || "Untitled Gist"}
+      {description}
     </span>
 
     <div
       class="text-base-content/70 mt-4 flex items-center gap-1.5 text-sm font-medium"
     >
       <Icon name="ion:document-outline" class="h-6 w-6" aria-hidden="true" />
-      <span>{Object.keys(gist.files).length}</span>
+      <span>{files.length}</span>
       <span>Files</span>
     </div>
   </div>

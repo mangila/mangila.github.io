@@ -1,11 +1,17 @@
 ---
+import MailtoLink from "../components/MailtoLink.astro";
 import { NAME } from "../shared/utils";
 ---
 
 <footer class="mt-8">
-  <div class="footer footer-center bg-base-300 text-base-content rounded">
+  <div
+    class="footer footer-center bg-base-300 text-base-content h-12 rounded text-lg"
+  >
     <div>
       <p>© {NAME}</p>
+    </div>
+    <div class="m-2">
+      <MailtoLink />
     </div>
   </div>
 </footer>

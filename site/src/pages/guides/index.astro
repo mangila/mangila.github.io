@@ -10,8 +10,7 @@ const gists = await getGitHubGistsAsync(GITHUB_USERNAME);
 ---
 
 <Layout>
-  <MailtoLink text="Curious about my other work? Let's chat." />
   <CardLayout>
-    {gists.map((gist) => <GistCard gist={gist} />)}
+    {gists.map((gist: any) => <GistCard gist={gist} />)}
   </CardLayout>
 </Layout>

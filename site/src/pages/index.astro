@@ -14,7 +14,7 @@ const markdownHtml = await convertMarkdownToHtmlAsync(readme.content);
 
 <Layout>
   <div class="flex w-full justify-center">
-    <div class="hero bg-base-200 min-h-[50vh]">
+    <div class="hero min-h-[50vh]">
       <div class="hero-content flex-col items-center gap-8 lg:flex-row-reverse">
         <figure class="w-full max-w-md">
           <Image
@@ -22,11 +22,10 @@ const markdownHtml = await convertMarkdownToHtmlAsync(readme.content);
             alt={NAME}
             priority
             format="webp"
-            quality="mid"
             class="h-auto w-full rounded-lg object-cover shadow-2xl"
           />
         </figure>
-        <div class="prose prose-md max-w-none">
+        <div class="prose max-w-none">
           <Fragment set:html={markdownHtml} />
         </div>
       </div>

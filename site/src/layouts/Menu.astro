@@ -1,4 +1,6 @@
 ---
+import MailtoLink from "../components/MailtoLink.astro";
+
 const { pathname } = Astro.url;
 ---
 
@@ -15,3 +17,5 @@ const { pathname } = Astro.url;
     <span class={pathname === "/guides" ? "underline" : ""}>Guides</span>
   </a>
 </div>
+
+<div class="divider"></div>

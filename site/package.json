@@ -17,8 +17,7 @@
     "@iconify-json/codicon": "^1.2.55",
     "@iconify-json/ion": "^1.2.7",
     "astro": "^6.3.3",
-    "astro-icon": "^1.1.5",
-    "theme-change": "^2.5.0"
+    "astro-icon": "^1.1.5"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",

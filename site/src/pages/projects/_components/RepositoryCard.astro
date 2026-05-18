@@ -7,12 +7,17 @@ interface Props {
   repository: GithubRepositoryResponse;
 }
 const { repository } = Astro.props;
-
-const languageBadgeBgColor = getLanguageBadgeBgColor(repository.language);
+const htmlUrl = repository.html_url ?? "";
+const name = repository.name ?? "";
+const description = repository.description ?? "";
+const stargazers = repository.stargazers_count ?? 0;
+const language = repository.language ?? "";
+const languageBadgeBgColor = getLanguageBadgeBgColor(language);
+const isArchived = repository.archived;
 ---
 
 <a
-  href={repository.html_url}
+  href={htmlUrl}
   target="_blank"
   rel="noopener noreferrer"
   class="link link-hover m-2 block h-full"
@@ -20,41 +25,28 @@ const languageBadgeBgColor = getLanguageBadgeBgColor(repository.language);
   <div class="rounded-box flex h-full flex-col justify-between border-2 p-2">
     <div>
       <span class="block text-lg font-bold">
-        {repository.name}
+        {name}
       </span>
 
-      {
-        repository.description && (
-          <p class="text-base-content/70 mt-1 text-sm">
-            {repository.description}
-          </p>
-        )
-      }
+      <p class="text-base-content/70 mt-1 text-sm">
+        {description}
+      </p>
     </div>
 
     <div class="mt-4 flex items-center gap-3 text-sm font-medium">
       <span class="flex items-center gap-1">
         <span aria-hidden="true">⭐</span>
-        {repository.stargazers_count}
+        {stargazers}
       </span>
 
-      {
-        repository.language && (
-          <span class="flex items-center gap-1.5">
-            <span
-              class={`h-3 w-3 rounded-full ${getLanguageBadgeBgColor(repository.language)}`}
-              aria-hidden="true"
-            />
-            <span>{repository.language}</span>
-          </span>
-        )
-      }
+      <span class="flex items-center gap-1.5">
+        <span
+          class={`h-3 w-3 rounded-full ${languageBadgeBgColor}`}
+          aria-hidden="true"></span>
+        <span>{language}</span>
+      </span>
 
-      {
-        repository.archived && (
-          <div class="badge badge-warning badge-sm">Archived</div>
-        )
-      }
+      {isArchived && <div class="badge badge-warning badge-sm">Archived</div>}
     </div>
   </div>
 </a>

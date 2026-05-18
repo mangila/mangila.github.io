@@ -18,13 +18,14 @@ import Menu from "./Menu.astro";
       const savedTheme = localStorage.getItem("theme");
       if (savedTheme) {
         document.documentElement.setAttribute("data-theme", savedTheme);
+      } else {
+        const systemPrefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        const theme = systemPrefersDark ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
       }
-    </script>
-
-    <!-- Theme Change Engine for Interactive Swapping -->
-    <script>
-      import { themeChange } from "theme-change";
-      themeChange();
     </script>
 
     <link rel="sitemap" href="/sitemap-index.xml" />
