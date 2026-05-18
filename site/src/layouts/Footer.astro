@@ -1,17 +1,26 @@
 ---
 import MailtoLink from "../components/MailtoLink.astro";
-import { NAME } from "../shared/utils";
+import { EMAIL, NAME } from "../shared/utils";
 ---
 
-<footer class="bg-base-300 text-base-content mt-8 rounded text-lg">
-  <!-- 
-    daisyUI's footer-center already handles flex alignment and padding natively.
-    By using an HTML <aside> tag inside, you remain fully semantic for SEO/Accessibility.
-  -->
-  <div class="footer footer-center p-6">
-    <aside class="flex flex-col items-center gap-2">
-      <MailtoLink />
-      <p>© {NAME}</p>
+<footer class="bg-base-300 text-base-content mt-16 rounded-t-xl text-lg">
+  <div class="footer footer-center gap-6 p-10">
+    <aside class="flex max-w-md flex-col items-center gap-3">
+      <h3 class="text-xl font-bold tracking-tight">
+        Let's build something together
+      </h3>
+      <p class="text-center text-sm opacity-80">
+        Have a project in mind or just want to chat about clean architecture?
+      </p>
+      <div class="mt-2">
+        <a href={`mailto:${EMAIL}`} class="link"> Drop me a line. </a>
+      </div>
     </aside>
+
+    <div class="divider my-0 w-24 opacity-20"></div>
+
+    <div class="text-lg opacity-60">
+      <p>© {NAME}</p>
+    </div>
   </div>
 </footer>
