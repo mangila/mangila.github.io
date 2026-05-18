@@ -1,36 +1,36 @@
 ---
-import normalize from "normalize.css/normalize.css?raw";
 import Navbar from "./Navbar.astro";
 import Footer from "./Footer.astro";
 import Menu from "./Menu.astro";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
-    <script>
-      import { themeChange } from "theme-change";
-      themeChange();
-    </script>
-    <script is:inline>
-      if (localStorage.getItem("theme") === null) {
-        document.documentElement.setAttribute("data-theme", "light");
-      } else
-        document.documentElement.setAttribute(
-          "data-theme",
-          localStorage.getItem("theme"),
-        );
-    </script>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <style is:inline set:html={normalize}></style>
+
+    <!-- Inline blocking script to prevent theme flickering (FOUC) -->
+    <script is:inline>
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      }
+    </script>
+
+    <!-- Theme Change Engine for Interactive Swapping -->
+    <script>
+      import { themeChange } from "theme-change";
+      themeChange();
+    </script>
+
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link type="text/plain" rel="author" href="/humans.txt" />
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
     <link rel="shortcut icon" href="/icons/favicon.ico" />
     <link
       rel="apple-touch-icon"
@@ -38,6 +38,7 @@ import Menu from "./Menu.astro";
       href="/icons/apple-touch-icon.png"
     />
     <link rel="manifest" href="/site.webmanifest" />
+
     <meta
       name="description"
       content="This website was brought to life by Erik Olsson as a professional digital presence. It is a static site deployed via GitHub Pages, focusing on speed and clean code."
@@ -52,8 +53,9 @@ import Menu from "./Menu.astro";
     <meta name="generator" content={Astro.generator} />
     <title>mangila</title>
   </head>
-  <body class="bg-base-200">
+  <body class="bg-base-200 text-base-content antialiased">
     <div class="flex min-h-dvh flex-col">
+      <!-- Top Safe Padding for Mobile Notches -->
       <div class="pt-safe flex-none">
         <Navbar />
       </div>
@@ -63,6 +65,7 @@ import Menu from "./Menu.astro";
       <main class="flex-grow">
         <slot />
       </main>
+      <!-- Bottom Safe Padding for Mobile Navigation Bars -->
       <div class="pb-safe flex-none">
         <Footer />
       </div>
@@ -70,7 +73,7 @@ import Menu from "./Menu.astro";
   </body>
 </html>
 
-<style>
+<style is:global>
   @import "tailwindcss";
   @import "tailwindcss-safe-area";
   @plugin "@tailwindcss/typography";
