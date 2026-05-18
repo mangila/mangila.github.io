@@ -3,12 +3,14 @@ import { Icon } from "astro-icon/components";
 ---
 
 <label class="flex cursor-pointer gap-2">
+  <span class="sr-only">Toggle dark mode</span>
   <Icon id="sunny" name="ion:sunny-outline" class="h-6 w-6" />
   <input
     id="theme-slider"
     type="checkbox"
     value="dark"
     class="toggle theme-controller"
+    aria-label="Toggle dark mode"
   />
   <Icon id="moon" name="ion:moon-outline" class="h-6 w-6" />
 </label>
@@ -24,6 +26,7 @@ import { Icon } from "astro-icon/components";
     themeSlider.addEventListener("change", (e) => {
       const target = e.target as HTMLInputElement;
       const newTheme = target.checked ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", newTheme);
       localStorage.setItem("theme", newTheme);
     });
   }
