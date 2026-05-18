@@ -8,20 +8,31 @@ import { NAME } from "../shared/utils";
   <div class="navbar bg-base-300 shadow-sm">
     <a href="/" class="flex-1">
       <div class="flex items-center gap-2">
-        <Icon name="codicon:code" class="h-10 w-10 fill-current" />
-        <p class="prose prose-xl font-bold">{NAME}</p>
+        <Icon
+          name="codicon:code"
+          class="h-10 w-10 fill-current"
+          aria-hidden="true"
+        />
+        <span class="prose prose-xl font-bold">{NAME}</span>
       </div>
     </a>
+
     <div class="mr-8 flex-none">
       <a
         href="https://github.com/mangila/mangila.github.io"
         target="_blank"
-        aria-label="Visit this website GitHub Repository"
+        rel="noopener noreferrer"
         class="inline-block border-b border-transparent text-inherit no-underline hover:border-current"
       >
-        <Icon name="codicon:github" class="h-10 w-10 fill-current" />
+        <Icon
+          name="codicon:github"
+          class="h-10 w-10 fill-current"
+          aria-hidden="true"
+        />
+        <span class="sr-only">Visit this website GitHub Repository</span>
       </a>
     </div>
+
     <div class="mr-8 flex-none">
       <ThemeSwap />
     </div>
