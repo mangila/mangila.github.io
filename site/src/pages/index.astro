@@ -13,21 +13,20 @@ const markdownHtml = await convertMarkdownToHtmlAsync(readme.content);
 ---
 
 <Layout>
-  <div class="flex justify-center">
-    <div class="hero">
-      <div class="hero-content flex-col lg:flex-row-reverse">
-        <figure>
+  <div class="flex w-full justify-center">
+    <div class="hero bg-base-100 min-h-[50vh]">
+      <div class="hero-content flex-col items-center gap-8 lg:flex-row-reverse">
+        <figure class="w-full max-w-md">
           <Image
             src={heroImage}
             alt={NAME}
-            loading="eager"
+            priority
             format="webp"
             quality="mid"
-            layout="constrained"
-            class="rounded-lg shadow-2xl"
+            class="h-auto w-full rounded-lg object-cover shadow-2xl"
           />
         </figure>
-        <div class="prose prose-md">
+        <div class="prose prose-md max-w-none">
           <Fragment set:html={markdownHtml} />
         </div>
       </div>
