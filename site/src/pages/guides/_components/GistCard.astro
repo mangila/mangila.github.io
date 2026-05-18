@@ -9,7 +9,11 @@ interface Props {
 const { gist } = Astro.props;
 ---
 
-<a href={gist.html_url} class="link link-hover m-2">
+<a
+  href={gist.html_url}
+  aria-label="Mangila GitHub Gist"
+  class="link link-hover m-2"
+>
   <div class="rounded-box h-full border border-2 p-2">
     <h3 class="font-bold">{gist.description}</h3>
 
