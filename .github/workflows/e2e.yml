@@ -27,7 +27,7 @@ jobs:
 
       - name: Cypress run
         # https://github.com/cypress-io/github-action
-        uses: cypress-io/github-action@dace029018fcdf86e0df89a31bc3cfa5b32570d8 # 7.3.0
+        uses: cypress-io/github-action@948d67d3074f1bbb6379c8bdbb04e95d2f8e593f # 7.4.0
         with:
           working-directory: ./site
           config: video=false
