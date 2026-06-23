@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.20",
-    "@tailwindcss/vite": "^4.3.0",
+    "@tailwindcss/vite": "^4.3.1",
     "cypress": "^15.17.0",
     "daisyui": "^5.5.23",
     "octokit": "^5.0.5",
