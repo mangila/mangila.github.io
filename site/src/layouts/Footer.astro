@@ -1,5 +1,5 @@
 ---
-import { EMAIL, NAME } from "../shared/utils";
+import { EMAIL, NAME, BUILD_COMMIT, BUILD_DATE } from "../shared/utils";
 ---
 
 <footer class="bg-base-300 text-base-content mt-16 rounded-t-xl text-lg">
@@ -22,6 +22,9 @@ import { EMAIL, NAME } from "../shared/utils";
 
     <div class="text-sm">
       <p>© {NAME}</p>
+      <p>{Astro.generator}</p>
+      <p>{BUILD_COMMIT}</p>
+      <p>{BUILD_DATE}</p>
     </div>
   </div>
 </footer>

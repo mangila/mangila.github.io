@@ -6,6 +6,8 @@ interface ImportMetaEnv {
   readonly PUBLIC_GITHUB_USERNAME: string;
   readonly PUBLIC_NAME: string;
   readonly PUBLIC_EMAIL: string;
+  readonly PUBLIC_BUILD_COMMIT: string;
+  readonly PUBLIC_BUILD_DATE: string;
 }
 
 interface ImportMeta {

@@ -3,6 +3,8 @@ export const GITHUB_USERNAME =
 export const NAME = import.meta.env.PUBLIC_NAME || "Erik Olsson";
 export const EMAIL =
   import.meta.env.PUBLIC_EMAIL || "olsson.erik1993@gmail.com";
+export const BUILD_COMMIT = import.meta.env.PUBLIC_BUILD_COMMIT;
+export const BUILD_DATE = import.meta.env.PUBLIC_BUILD_DATE;
 
 export function getLanguageBadgeBgColor(language: string | null): string {
   if (!language) return "bg-slate-500";
