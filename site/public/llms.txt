@@ -1,6 +1,6 @@
 # Erik Olsson - Personal Website
 
-> A high-performance personal portfolio and website built with Astro.
+> A personal portfolio and website built with Astro.
 
 ## Identity & Purpose
 Created by Erik Olsson as a professional portfolio and digital hub.

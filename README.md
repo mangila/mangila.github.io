@@ -4,7 +4,7 @@
 
 # mangila.github.io
 
-mangila.github.io
+Created by me as a professional portfolio and digital hub.
 
 ## Env
 
