@@ -5,6 +5,10 @@ python = "3"
 [env]
 _.python.venv = ".venv"
 
+[tasks.run]
+dir = "./site"
+run = "npm run dev"
+
 [tasks."format:check"]
 dir = "./site"
 run = "npm run format:check"
