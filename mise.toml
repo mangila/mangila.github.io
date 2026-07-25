@@ -20,3 +20,7 @@ run = "npm run format:write"
 [tasks."cypress:run"]
 dir = "./site"
 run = "npm run cypress:run"
+
+[tasks.install]
+dir = "./site"
+run = "npm install"

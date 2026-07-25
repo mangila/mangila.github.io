@@ -16,6 +16,14 @@ Install mise stuffs
 mise install
 ```
 
+## Npm
+
+Run npm install
+
+```bash
+mise run install
+```
+
 ## Pre commit Setup
 
 - https://pre-commit.com/
