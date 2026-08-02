@@ -2,6 +2,8 @@ name: Cypress E2E
 
 on:
   pull_request:
+    paths:
+      - "site/**"
     branches:
       - main
 
