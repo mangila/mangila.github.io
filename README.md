@@ -11,6 +11,6 @@ Created by me as a professional portfolio and digital hub.
 Root in `/site`
 
 - PUBLIC_GITHUB_USERNAME - Github Username used to fetch in OcktoKit
-- PUBLIC_NAME - Name to show in Display
-- PUBLIC_EMAIL - Email for call to actions
+- PUBLIC_NAME – Name to show in Display
+- PUBLIC_EMAIL – Email for call to actions
 - GITHUB_USER_TOKEN - (Optional)
