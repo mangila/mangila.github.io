@@ -10,6 +10,8 @@ const gists = await getGitHubGistsAsync(GITHUB_USERNAME);
 
 <Layout>
   <CardLayout>
-    {gists.map((gist: any) => <GistCard gist={gist} />)}
+    {gists.map((gist: any) => (
+      <GistCard gist={gist} />
+    ))}
   </CardLayout>
 </Layout>
