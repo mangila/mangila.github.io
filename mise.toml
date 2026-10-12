@@ -1,9 +1,8 @@
 [tools]
-node = "24"
-python = "3"
+python = "3.15.0"
 
 [env]
-_.python.venv = ".venv"
+_.python.venv = { path = ".venv", create = true }
 
 [tasks.run]
 dir = "./site"

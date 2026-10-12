@@ -8,7 +8,7 @@ minimum_pre_commit_version: '4.6.0'
 repos:
   - repo: local
     hooks:
-      - id: prettier check
+      - id: check-format
         name: Prettier check
         entry: mise format:check
         language: system
